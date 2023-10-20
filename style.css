@@ -1,0 +1,78 @@
+/****** Custom variables *******/
+
+:root {
+  --primary_clr: rgb(66, 66, 66);
+  --accent_clr: cyan;
+  --my_white: rgb(225, 242, 217);
+  --my_black: #333;
+
+  --fs_primary_heading: 2.5rem;
+  --fs_secondary_heading: 1.875rem;
+
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+  --ff-heading: "Open Sans", sans-serif;
+}
+
+/****** CSS reset *******/
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-primary);
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/****** Utility Classes *******/
+
+/* buttons,containers,lists etc */
+
+.container {
+  width: min(1100px, 100%-2rem);
+  margin-inline: auto;
+}
+
+button {
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  width: fit-content;
+  cursor: pointer;
+  border: none;
+  color: var(--accent_clr);
+  background-color: var(--my_white);
+  box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--clr-accent);
+  box-shadow: none;
+}
