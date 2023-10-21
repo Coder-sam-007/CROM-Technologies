@@ -1,16 +1,26 @@
 /****** Custom variables *******/
 
+@font-face {
+  font-family: Gilroy-Bold;
+  src: url(/Fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url(/Fonts/Gilroy-Regular.ttf);
+}
+
 :root {
   --primary_clr: rgb(66, 66, 66);
-  --accent_clr: cyan;
+  --accent_clr: #f9efcd;
   --my_white: rgb(225, 242, 217);
   --my_black: #333;
 
   --fs_primary_heading: 2.5rem;
   --fs_secondary_heading: 1.875rem;
 
-  --ff-primary: "Be Vietnam Pro", sans-serif;
-  --ff-heading: "Open Sans", sans-serif;
+  --ff-primary: "Gilroy-Regular", sans-serif;
+  --ff-heading: "Gilroy-Bold", sans-serif;
 }
 
 /****** CSS reset *******/
@@ -31,6 +41,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--ff-primary);
+  font-size: 1.2rem;
 }
 
 img,
@@ -55,24 +66,166 @@ a {
 /* buttons,containers,lists etc */
 
 .container {
-  width: min(1100px, 100%-2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(1400px, 100% - 2rem);
   margin-inline: auto;
 }
 
 button {
-  padding: 1rem;
-  margin: 1rem auto;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  margin: 0.8rem auto;
   border-radius: 1rem;
   width: fit-content;
   cursor: pointer;
   border: none;
   color: var(--accent_clr);
-  background-color: var(--my_white);
-  box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
+  background-color: var(--my_black);
+  box-shadow: 0 1.125em 1em -1em var(--clr-accent);
 }
 
 .button:hover,
 .button:focus-visible {
   background-color: var(--clr-accent);
   box-shadow: none;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #5b5c73;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+.logo {
+  color: white;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* hero-section */
+
+.hero-content {
+  width: min(40rem, 90%);
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-block: 4rem 1rem;
+  position: relative;
+  font-family: var(--ff-heading);
+  line-height: 1.2;
+  color: transparent;
+  background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
+  /* background-image: linear-gradient(0.30turn, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%); */
+  -webkit-background-clip: text;
+}
+
+.hero-content h1::after {
+  content: "";
+  position: absolute;
+  top: -3rem;
+  left: 10%;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  filter: blur(6rem);
+  transform: translate(-50%, -50%);
+}
+
+.hero-img {
+  width: min(40rem, 90%);
+  position: relative;
+}
+
+.hero-img::before {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  background-image: linear-gradient(-45deg, #ffcc0d 50%, #f29998 50%);
+  filter: blur(6rem);
+  transform: translate(-50%, -50%);
+}
+
+.hero-img::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  background-image: linear-gradient(-45deg, #5778ef 50%, #80ff91 50%);
+  filter: blur(6rem);
+  transform: translate(-50%, -50%);
+}
+
+.hero-social {
+  display: flex;
+  flex-direction: column;
+  background: #fff0b8;
+  padding: 2rem;
+  padding-top: 0.5rem;
+  max-width: 25rem;
+  margin-block: 3rem;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='black' stroke-width='6' stroke-dasharray='7%2c 10' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+  border-radius: 10px;
+  position: relative;
+}
+/* 
+.hero-social::before {
+  content: "";
+  position: absolute;
+  left: 130%;
+  top: 120%;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  background-image: linear-gradient(-45deg, #eb73ff 50%, #ffe583 50%);
+  filter: blur(6rem);
+  transform: translate(-50%, -50%);
+} */
+
+.hero-social::after {
+  position: absolute;
+  content: "";
+  width: 8rem;
+  aspect-ratio: 1;
+  bottom: 4rem;
+  right: -8rem;
+  background-repeat: no-repeat;
+  background-image: url(/images/Free\ Dotted\ Curved\ Arrow\ Vector.svg);
+}
+
+.hero-social ul {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-social ul li {
+  font-size: 1.5rem;
+  background: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 10px 0px yellowgreen;
 }
