@@ -4,93 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <style>
-    html {
-      height: 100vh;
-      background: antiquewhite;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: min(1400px, 100% - 2rem);
-      margin-inline: auto;
-    }
-
-    .block {
-      width: 200vw;
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(2, 1fr);
-      overflow: scroll;
-      background-color: rgb(221, 178, 115);
-      padding: 2rem;
-      justify-content: start;
-      justify-items: start;
-    }
-
-    .child-container-1,
-    .child-container-2 {
-      width: calc(100vw - 8rem);
-
-    }
-
-    .box-wrapper {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-    }
-
-    .box {
-      background-color: lightgreen;
-      border-radius: 1rem;
-      height: 10rem;
-    }
-
-    .child-container-2 .box {
-      background-color: aquamarine;
-    }
-  </style>
+  <title>HM3</title>
+  <link rel="stylesheet" href="test.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="block">
-      <div class="child-container-1">
-
-        <div class="box-wrapper">
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-        </div>
-
-      </div>
-      <div class="child-container-2">
-
-        <div class="box-wrapper">
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-        </div>
-
-      </div>
+  <input type="checkbox" class="toggler">
+  <div class="hamburger">
+    <div></div>
+  </div>
+  <div class="menu">
+    <div>
+      <ul>
+        <li><a href='#'>Home</a></li>
+        <li><a href='#'>About</a></li>
+        <li><a href='#'>Services</a></li>
+        <li><a href='#'>Contact</a></li>
+      </ul>
     </div>
   </div>
 </body>

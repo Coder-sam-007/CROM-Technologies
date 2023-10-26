@@ -1,3 +1,10 @@
+const header = document.querySelector("header");
+const hambugerMenu = document.querySelector(".hamburger");
+
+hambugerMenu.addEventListener("click", () => {
+  header.classList.toggle("active");
+});
+
 const revealButton = document.querySelector(".service-item:nth-child(2) .btn");
 const containerWrapper = document.querySelector(".container-wrapper");
 
