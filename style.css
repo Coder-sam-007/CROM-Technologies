@@ -73,8 +73,12 @@ a {
   margin-inline: auto;
 }
 
+.only-mob {
+  display: none;
+}
+
 .heading {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.5714rem + 1.9048vw, 3rem);
   margin: 2rem auto;
   letter-spacing: 1px;
 }
@@ -210,7 +214,7 @@ header.active .hamburger > div::after {
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 1.8571rem + 2.8571vw, 4rem);
   margin-block: 4rem 1rem;
   position: relative;
   font-family: var(--ff-heading);
@@ -233,6 +237,7 @@ header.active .hamburger > div::after {
   background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
   filter: blur(6rem);
   transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .hero-img {
@@ -251,6 +256,7 @@ header.active .hamburger > div::after {
   background-image: linear-gradient(-45deg, #ffcc0d 50%, #f29998 50%);
   filter: blur(6rem);
   transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .hero-img::after {
@@ -264,6 +270,7 @@ header.active .hamburger > div::after {
   background-image: linear-gradient(-45deg, #5778ef 50%, #80ff91 50%);
   filter: blur(6rem);
   transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .hero-social {
@@ -430,7 +437,7 @@ header.active .hamburger > div::after {
 }
 
 .heading-container h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.5714rem + 1.9048vw, 3rem);
   line-height: 1.2;
 }
 
@@ -451,12 +458,12 @@ header.active .hamburger > div::after {
 }
 
 .big {
-  font-size: 3.5rem;
+  font-size: clamp(2.8rem, 2.5rem + 1.3333vw, 3.5rem);
   margin-left: 1rem;
 }
 
 .bigger {
-  font-size: 5rem;
+  font-size: clamp(3rem, 2.1429rem + 3.8095vw, 5rem);
 }
 
 .about-card {
@@ -467,7 +474,9 @@ header.active .hamburger > div::after {
 }
 
 .stat-card {
-  background-color: #ffffff4a;
+  text-align: center;
+
+  background-color: #ffffff2b;
   padding: 0.5rem;
   border-radius: 0.4rem;
   display: flex;
@@ -487,10 +496,14 @@ header.active .hamburger > div::after {
   border-radius: 4rem;
   background-color: #30cfd0;
   width: 75%;
+  height: 20rem;
 }
 
 .about-img img {
   border-radius: 4rem;
+  height: 100%;
+
+  object-fit: cover;
 }
 
 /* mission section */
@@ -502,12 +515,14 @@ header.active .hamburger > div::after {
 }
 
 .mission-section .container {
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   align-items: flex-start;
 }
 
 .mission-img {
-  width: min(37rem, 90%);
+  width: min(36rem, 100%);
+
+  margin-top: 2rem;
 }
 
 .mission-content {
@@ -520,7 +535,7 @@ header.active .hamburger > div::after {
 }
 
 .mission-content h3 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.5714rem + 1.9048vw, 3rem);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -540,7 +555,7 @@ header.active .hamburger > div::after {
 }
 
 .tech-stack-section li {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 1.0714rem + 1.9048vw, 2.5rem);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -557,6 +572,7 @@ header.active .hamburger > div::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 4rem;
 }
 
 .card {
@@ -564,7 +580,6 @@ header.active .hamburger > div::after {
   min-height: 20rem;
   border-radius: 2rem;
   background-size: cover;
-  margin-bottom: 4rem;
 }
 
 .card:nth-child(1) {
@@ -581,7 +596,7 @@ header.active .hamburger > div::after {
 }
 
 .innovation-section .btn {
-  margin: 0rem auto;
+  margin: 2rem auto;
 }
 
 /* Testimonial section */
@@ -594,14 +609,15 @@ header.active .hamburger > div::after {
 
 .testimonial-section .container {
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 figure.snip1192 {
   position: relative;
-  overflow: hidden;
+
   max-width: 25rem;
   color: #fff;
-  height: 27rem;
+  height: 100%;
   text-align: left;
 }
 figure.snip1192 * {
@@ -627,7 +643,7 @@ figure.snip1192 blockquote {
   padding: 2rem 5rem 5rem;
   font-size: 0.8em;
   margin: 0 0 -50px;
-  height: 70%;
+  height: 95%;
   line-height: 1.6em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
@@ -945,5 +961,69 @@ footer .btn {
 
   .tech-stack-section ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .only-mob {
+    display: block !important;
+  }
+  .hero-section {
+    height: 100%;
+  }
+  .hero-content h1 {
+    margin-block: 6rem 1rem;
+  }
+
+  .hero-img::before {
+    left: 80%;
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .hero-img::after {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .hero-img,
+  .hero-social::after {
+    display: none;
+  }
+
+  .child-container {
+    margin-block: 1rem;
+    padding: 0rem;
+  }
+
+  .heading-container h2 {
+    text-align: center;
+  }
+
+  .flex {
+    flex-wrap: wrap;
+
+    margin-block: 1.25rem;
+    justify-content: center;
+  }
+
+  .since {
+    display: none;
+  }
+
+  .tech-stack-section {
+    padding-inline: 0rem;
+    display: block;
+  }
+
+  .tech-stack-section li > img {
+    max-width: 2rem;
+  }
+
+  .card-container {
+    gap: 2rem;
+  }
+  .card {
+    width: 90%;
   }
 }
