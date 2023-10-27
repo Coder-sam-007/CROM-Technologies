@@ -502,13 +502,18 @@ header.active .hamburger > div::after {
 .about-img {
   border-radius: 4rem;
   height: 40vw;
+  overflow: hidden;
 }
 
 .about-img img {
   border-radius: 4rem;
   height: 100%;
-
   object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-img img:hover {
+  transform: scale(1.1);
 }
 
 /* mission section */
@@ -567,7 +572,6 @@ header.active .hamburger > div::after {
 
 .tech-stack-section li > img {
   max-width: 4rem;
-  filter: grayscale(1);
 }
 
 /* Innovation section */
@@ -815,6 +819,7 @@ figure.snip1192 .author h5 span {
 footer {
   color: #9ca3af;
   background: #202028;
+  overflow: hidden;
 }
 
 .footer-wrapper {
@@ -840,7 +845,7 @@ footer {
 }
 
 .footer-heading {
-  margin-bottom: 1rem;
+  margin-block: 0rem 1rem;
   color: #d7d7d7;
 }
 
@@ -973,6 +978,13 @@ footer .btn {
   .mission-content {
     width: min(45rem, 90%);
   }
+
+  .snip1192:nth-child(2).animate.left {
+    transform: translateX(100%);
+  }
+  .snip1192:nth-child(2).animate.left.show {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 800px) {
@@ -1047,6 +1059,10 @@ footer .btn {
 
   .mission-section {
     margin-block: 10rem 5rem;
+  }
+
+  .footer-heading {
+    margin-block: 1rem 0rem;
   }
 }
 
@@ -1159,6 +1175,21 @@ footer .btn {
   .social-media,
   .subscribe-form {
     justify-content: center;
+  }
+
+  .quick-links.animate.top,
+  .service-item:nth-child(4).animate.bottom {
+    transform: translateX(100%);
+  }
+
+  .subscribe-section.animate.right,
+  .service-wrapper-2.service-item:nth-child(1).animate.top {
+    transform: translateX(-100%);
+  }
+  .quick-links.animate.top.show,
+  .service-item:nth-child(4).animate.bottom.show,
+  .service-wrapper-2.service-item:nth-child(1).animate.top.show {
+    transform: translateX(0);
   }
 }
 
