@@ -210,12 +210,13 @@ header.active .hamburger > div::after {
 /* hero-section */
 
 .hero-content {
-  width: min(40rem, 90%);
+  width: min(34rem, 90%);
+  margin: auto;
 }
 
 .hero-content h1 {
   font-size: clamp(2.5rem, 1.8571rem + 2.8571vw, 4rem);
-  margin-block: 4rem 1rem;
+  margin-block: 6rem 1rem;
   position: relative;
   font-family: var(--ff-heading);
   line-height: 1.2;
@@ -243,6 +244,7 @@ header.active .hamburger > div::after {
 .hero-img {
   width: min(40rem, 100%);
   position: relative;
+  margin: auto;
 }
 
 .hero-img::before {
@@ -458,12 +460,12 @@ header.active .hamburger > div::after {
 }
 
 .big {
-  font-size: clamp(2.8rem, 2.5rem + 1.3333vw, 3.5rem);
+  font-size: clamp(2.8rem, 2.6269rem + 0.7692vw, 3.3rem);
   margin-left: 1rem;
 }
 
 .bigger {
-  font-size: clamp(3rem, 2.1429rem + 3.8095vw, 5rem);
+  font-size: clamp(3rem, 2.4255rem + 2.5532vw, 4.5rem);
 }
 
 .about-card {
@@ -494,9 +496,7 @@ header.active .hamburger > div::after {
 
 .about-img {
   border-radius: 4rem;
-  background-color: #30cfd0;
-  width: 75%;
-  height: 20rem;
+  height: 40vw;
 }
 
 .about-img img {
@@ -520,13 +520,12 @@ header.active .hamburger > div::after {
 }
 
 .mission-img {
-  width: min(36rem, 100%);
-
+  width: min(34rem, 100%);
   margin-top: 2rem;
 }
 
 .mission-content {
-  width: min(45rem, 90%);
+  width: min(38rem, 90%);
 }
 
 .mission-content .heading {
@@ -610,17 +609,21 @@ header.active .hamburger > div::after {
 .testimonial-section .container {
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: space-evenly;
 }
 
 figure.snip1192 {
   position: relative;
-  max-width: 25rem;
+  max-width: 23rem;
   color: #fff;
   height: 100%;
   text-align: left;
 }
 
 figure.snip1192 img {
+  height: 120px;
+  width: 120px;
+  background-color: cadetblue;
   max-width: 100%;
   height: 100px;
   width: 100px;
@@ -639,7 +642,7 @@ figure.snip1192 blockquote {
   padding: 2rem 5rem 5rem;
   font-size: 0.8em;
   margin: 0 0 -50px;
-  height: 95%;
+  min-height: 24rem;
   line-height: 1.6em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
@@ -907,6 +910,65 @@ footer .btn {
   -webkit-background-clip: text;
 }
 
+@media (max-width: 1200px) {
+  .testimonial-section div.container {
+    justify-content: space-evenly;
+  }
+
+  .mission-section .container {
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mission-content {
+    width: min(25rem, 90%);
+  }
+
+  .hero-img {
+    width: min(30rem, 100%);
+  }
+
+  figure.snip1192 {
+    max-width: 25rem;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .big {
+    font-size: 2.6rem;
+  }
+
+  .bigger {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero-social::after,
+  .since {
+    display: none;
+  }
+
+  .flex {
+    flex-direction: column;
+    margin-block: 2rem;
+  }
+
+  .hero-section {
+    height: 100%;
+  }
+
+  .testimonial-section .container,
+  .mission-section .container,
+  .hero-section {
+    justify-content: center;
+  }
+
+  .mission-content {
+    width: min(45rem, 90%);
+  }
+}
+
 @media (max-width: 800px) {
   .hamburger {
     display: flex;
@@ -943,16 +1005,6 @@ footer .btn {
     color: black;
   }
 
-  .hero-section,
-  .mission-section .container,
-  .testimonial-section .container {
-    justify-content: center;
-  }
-
-  .hero-section {
-    height: 100%;
-  }
-
   .child-container {
     flex-wrap: wrap;
   }
@@ -968,7 +1020,12 @@ footer .btn {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .tech-stack-section li > img {
+    filter: none;
+  }
+
   figure.snip1192 blockquote {
+    min-height: 20rem;
     padding: 2rem 3.5rem 5rem;
   }
 
@@ -987,6 +1044,20 @@ footer .btn {
   }
 }
 
+@media (min-width: 600px) and (max-width: 800px) {
+  .service-wrapper-2 {
+    width: calc(100vw - 6rem);
+  }
+
+  .services-container {
+    grid-template-areas: "box-1 box-4" "box-3 box-2";
+  }
+
+  .card-container {
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 600px) {
   .only-mob {
     display: block !important;
@@ -994,7 +1065,6 @@ footer .btn {
 
   .hero-content h1 {
     letter-spacing: 2px;
-    margin-block: 6rem 1rem;
   }
 
   .hero-img::before {
@@ -1008,8 +1078,7 @@ footer .btn {
     width: 10rem;
   }
 
-  .hero-img,
-  .hero-social::after {
+  .hero-img {
     display: none;
   }
 
@@ -1026,10 +1095,6 @@ footer .btn {
     flex-wrap: wrap;
     margin-block: 1.25rem;
     justify-content: center;
-  }
-
-  .since {
-    display: none;
   }
 
   .tech-stack-section {
@@ -1083,10 +1148,6 @@ footer .btn {
 
   .about-img img {
     border-radius: 2rem;
-  }
-
-  .tech-stack-section li > img {
-    filter: none;
   }
 
   .social-media,
