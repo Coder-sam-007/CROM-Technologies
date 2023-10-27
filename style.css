@@ -1222,3 +1222,7 @@ header.animate {
 .snip1192 .animate {
   transition: all 0.6s;
 }
+
+.tech-stack-section .animate {
+  filter: blur(0);
+}
