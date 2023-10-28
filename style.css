@@ -979,11 +979,29 @@ footer .btn {
     width: min(45rem, 90%);
   }
 
-  .snip1192:nth-child(2).animate.left {
-    transform: translateX(100%);
-  }
-  .snip1192:nth-child(2).animate.left.show {
-    transform: translateX(0);
+  .service-item:nth-child(1).animate,
+  .service-item:nth-child(2).animate,
+  .service-item:nth-child(3).animate,
+  .service-item:nth-child(4).animate,
+  .service-item:nth-child(1).animate.show,
+  .service-item:nth-child(2).animate.show,
+  .service-item:nth-child(3).animate.show,
+  .service-item:nth-child(4).animate.show,
+  .hero-social.animate.left,
+  .hero-social.animate.left.show,
+  .mission-img.animate.left,
+  .mission-img.animate.left.show,
+  .mission-content.animate.right,
+  .mission-content.animate.right.show,
+  .card.animate.left,
+  .card.animate.left.show,
+  .card.animate.right,
+  .card.animate.right.show,
+  .snip1192.animate.left,
+  .snip1192.animate.left.show {
+    transform: translate(0);
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
@@ -1162,7 +1180,7 @@ footer .btn {
   }
 
   .about-img {
-    border-radius: 4em;
+    border-radius: 2rem;
     width: 90%;
     height: 15rem;
     margin-top: 2rem;
@@ -1175,21 +1193,6 @@ footer .btn {
   .social-media,
   .subscribe-form {
     justify-content: center;
-  }
-
-  .quick-links.animate.top,
-  .service-item:nth-child(4).animate.bottom {
-    transform: translateX(100%);
-  }
-
-  .subscribe-section.animate.right,
-  .service-wrapper-2.service-item:nth-child(1).animate.top {
-    transform: translateX(-100%);
-  }
-  .quick-links.animate.top.show,
-  .service-item:nth-child(4).animate.bottom.show,
-  .service-wrapper-2.service-item:nth-child(1).animate.top.show {
-    transform: translateX(0);
   }
 }
 

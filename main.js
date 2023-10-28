@@ -3,10 +3,15 @@ const hambugerMenu = document.querySelector(".hamburger");
 const revealButton = document.querySelector(".service-item:nth-child(2) .btn");
 const containerWrapper = document.querySelector(".container-wrapper");
 const animatedElements = document.querySelectorAll(".animate");
+const links = document.querySelectorAll("header nav>ul>*");
 
 hambugerMenu.addEventListener("click", () => {
   header.classList.toggle("active");
 });
+
+links.forEach((link) =>
+  link.addEventListener("click", () => header.classList.remove("active"))
+);
 
 revealButton.addEventListener("click", () => {
   const currentScrollPosition = containerWrapper.scrollLeft;
@@ -32,11 +37,8 @@ revealButton.addEventListener("click", () => {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
     }
   });
 });
